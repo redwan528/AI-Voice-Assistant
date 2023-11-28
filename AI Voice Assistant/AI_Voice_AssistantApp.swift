@@ -12,6 +12,13 @@ struct AI_Voice_AssistantApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            #if os(macOS) //conditional macros
+                .frame(width: 400, height: 400)
+            #endif
         }
+        #if os(macOS)
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+        #endif
     }
 }

@@ -11,6 +11,10 @@
 		5C61A4E72B15C7A000587001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61A4E62B15C7A000587001 /* ContentView.swift */; };
 		5C61A4E92B15C7A100587001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C61A4E82B15C7A100587001 /* Assets.xcassets */; };
 		5C61A4ED2B15C7A100587001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C61A4EC2B15C7A100587001 /* Preview Assets.xcassets */; };
+		5C61A4F52B15C93800587001 /* SiriWaveView in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61A4F42B15C93800587001 /* SiriWaveView */; };
+		5C61A4F82B15CBDB00587001 /* XCAOpenAIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 5C61A4F72B15CBDB00587001 /* XCAOpenAIClient */; };
+		5C61A4FA2B15CF4000587001 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61A4F92B15CF4000587001 /* Models.swift */; };
+		5C61A4FC2B15D02600587001 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C61A4FB2B15D02600587001 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,8 @@
 		5C61A4E82B15C7A100587001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C61A4EA2B15C7A100587001 /* AI_Voice_Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AI_Voice_Assistant.entitlements; sourceTree = "<group>"; };
 		5C61A4EC2B15C7A100587001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C61A4F92B15CF4000587001 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5C61A4FB2B15D02600587001 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C61A4F82B15CBDB00587001 /* XCAOpenAIClient in Frameworks */,
+				5C61A4F52B15C93800587001 /* SiriWaveView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +65,8 @@
 				5C61A4E82B15C7A100587001 /* Assets.xcassets */,
 				5C61A4EA2B15C7A100587001 /* AI_Voice_Assistant.entitlements */,
 				5C61A4EB2B15C7A100587001 /* Preview Content */,
+				5C61A4F92B15CF4000587001 /* Models.swift */,
+				5C61A4FB2B15D02600587001 /* ViewModel.swift */,
 			);
 			path = "AI Voice Assistant";
 			sourceTree = "<group>";
@@ -85,6 +95,10 @@
 			dependencies = (
 			);
 			name = "AI Voice Assistant";
+			packageProductDependencies = (
+				5C61A4F42B15C93800587001 /* SiriWaveView */,
+				5C61A4F72B15CBDB00587001 /* XCAOpenAIClient */,
+			);
 			productName = "AI Voice Assistant";
 			productReference = 5C61A4E12B15C7A000587001 /* AI Voice Assistant.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +127,10 @@
 				Base,
 			);
 			mainGroup = 5C61A4D82B15C7A000587001;
+			packageReferences = (
+				5C61A4F32B15C93800587001 /* XCRemoteSwiftPackageReference "SiriWaveView" */,
+				5C61A4F62B15CBDB00587001 /* XCRemoteSwiftPackageReference "XCAOpenAIClient" */,
+			);
 			productRefGroup = 5C61A4E22B15C7A000587001 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C61A4FA2B15CF4000587001 /* Models.swift in Sources */,
 				5C61A4E72B15C7A000587001 /* ContentView.swift in Sources */,
+				5C61A4FC2B15D02600587001 /* ViewModel.swift in Sources */,
 				5C61A4E52B15C7A000587001 /* AI_Voice_AssistantApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +294,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow microphone access to talk with AI Assistant?";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -282,8 +303,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -312,6 +333,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow microphone access to talk with AI Assistant?";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -320,8 +342,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -359,6 +381,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C61A4F32B15C93800587001 /* XCRemoteSwiftPackageReference "SiriWaveView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/SiriWaveView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		5C61A4F62B15CBDB00587001 /* XCRemoteSwiftPackageReference "XCAOpenAIClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/XCAOpenAIClient";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C61A4F42B15C93800587001 /* SiriWaveView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61A4F32B15C93800587001 /* XCRemoteSwiftPackageReference "SiriWaveView" */;
+			productName = SiriWaveView;
+		};
+		5C61A4F72B15CBDB00587001 /* XCAOpenAIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C61A4F62B15CBDB00587001 /* XCRemoteSwiftPackageReference "XCAOpenAIClient" */;
+			productName = XCAOpenAIClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5C61A4D92B15C7A000587001 /* Project object */;
 }
