@@ -36,6 +36,13 @@ struct ContentView: View {
             }
             .pickerStyle(.segmented)
             .disabled(vm.isIdle)
+            
+            if case let .error(error) = vm.state {
+                Text(error.localizedDescription)
+                    .foregroundStyle(.red)
+                    .font(.caption)
+                    .lineLimit(2)
+            }
         }
         .padding()
     }
