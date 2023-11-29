@@ -26,8 +26,33 @@ class ViewModel: NSObject {
     }
     
     var audioPower = 0.0
+    var siriWaveFormOpacity: CGFloat {
+        switch state{
+            
+//        case .idle:
+//            <#code#>
+        case .recordingSpeech:
+            return 1
+//        case .processingSpeech:
+//            <#code#>
+        case .playingSpeech:
+            return 1
+//        case .error(_):
+//            <#code#>
+        default: return 0
+        }
+    }
+    
     
     func startCaptureAudio(){
+        
+    }
+    
+    func cancelRecording(){
+        
+    }
+    
+    func cancelProcessingTask(){
         
     }
 }
